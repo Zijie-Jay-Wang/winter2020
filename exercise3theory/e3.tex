@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{graphics}
+\title{Complexity of Tree Operations I}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item For each of the following operations on a binary tree, indicate
+  its Big-Oh and Big-Omega complexity.
+  \begin{enumerate}
+  \item $search(v, T)$: find the node that contains value $v$ in a binary tree $T$
+  \item $insert(v, T)$: insert value $v$ into binary tree $T$
+  \item $delete(v, T)$: delete node with value $v$ from binary tree $T$
+  \end{enumerate}
+\item Suppose a binary tree is created by randomly inserting values
+  $v_1, v_2, ..., v_N$ as follows: at each step the insert algorithm
+  moves into the left subtree with probability 0.5 and into the right
+  subtree with probability 0.5. On average, what is the complexity of:
+  \begin{enumerate}
+  \item $search(v, T)$?
+  \item $insert(v, T)$?
+  \item $delete(v, T)$?
+  \end{enumerate}
+\item For each of the following operations on a binary search tree (bst),
+  indicate its Big-Oh and Big-Omega complexity.
+  \begin{enumerate}
+  \item $search(v, T)$: find the node that contains value $v$ in a bst $T$
+  \item $insert(v, T)$: insert value $v$ into bst $T$
+  \item $delete(v, T)$: delete node with value $v$ from bst $T$
+  \end{enumerate}
+\item Suppose a binary search tree is created by inserting values
+  $1, 2, ..., N$ in a (uniformly) random order. On average, what is
+  the complexity of:
+  \begin{enumerate}
+  \item $search(v, T)$?
+  \item $insert(v, T)$?
+  \item $delete(v, T)$?
+  \end{enumerate}  
+\end{enumerate}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
