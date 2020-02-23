@@ -1,9 +1,5 @@
 '''Exercise 1: Implementing Binary Trees.'''
 
-# 1) Run PyLint on this file.
-# 2) Look up str.format and use it here.
-# 3) Avoid using \. Use parentheses for grouping instead.
-
 
 class BTree:
     '''A Binary Tree.'''
@@ -27,7 +23,7 @@ class BTree:
 
         '''
 
-        return _preorder(self._root)
+        pass
 
     def inorder(self):
         '''Return a list of values in this BTree, corresponding to an in-order
@@ -35,7 +31,7 @@ class BTree:
 
         '''
 
-        return _inorder(self._root)
+        pass
 
     def postorder(self):
         '''Return a list of values in this BTree, corresponding to a
@@ -43,12 +39,12 @@ class BTree:
 
         '''
 
-        return _postorder(self._root)
+        pass
 
     def size(self):
         '''Return the number of nodes in this BTree.'''
 
-        return _size(self._root)
+        pass
 
     def height(self):
         '''Return the height of this BTree: the number of nodes on the longest
@@ -56,17 +52,17 @@ class BTree:
 
         '''
 
-        return _height(self._root)
+        pass
 
     def fringe(self):
         '''Return a list of leaves in this BTree, in left-to-right order.'''
 
-        return _fringe(self._root)
+        pass
 
     def __str__(self):
         '''Return a str representation of this BTree.'''
 
-        return _str(self._root)
+        pass
 
 
 class BTNode:
@@ -101,7 +97,7 @@ class BTNode:
     def __str__(self):
         '''Return a str representation of a tree rooted in this BTnode.'''
 
-        return str(self.value)
+        return _str(self)
 
 
 def _preorder(node):
@@ -110,9 +106,7 @@ def _preorder(node):
 
     '''
 
-    if node is None:
-        return []
-    return [node.value] + _preorder(node.left) + _preorder(node.right)
+    pass
 
 
 def _inorder(node):
@@ -121,9 +115,7 @@ def _inorder(node):
 
     '''
 
-    if node is None:
-        return []
-    return _inorder(node.left) + [node.value] + _inorder(node.right)
+    pass
 
 
 def _postorder(node):
@@ -131,24 +123,14 @@ def _postorder(node):
     a post-order traversal.
 
     '''
-    if node is None:
-        return []
-    return _postorder(node.left) + _postorder(node.right) + [node.value]
+
+    pass
 
 
 def _str(node, offset=0):
     '''Return a str representation of a BTree rooted at node.'''
-    if node is None:
-        return ''
-    if node.left is None and node.right is None:
-        return "\n {} {} \n".format(offset*'\t', node.value)
-    # ANYA: notice that you don't need offset=offset+1 here
-    # you can just use offset + 1
-    return "{} \n {} {} \n {}".format(_str(node.right, offset + 1),
-                                      offset*'\t', node.value,
-                                      _str(node.left, offset + 1))
 
-    # '\n\t\t7\n\n\t6\n\n5\n\n\t\t4\n\n\t3\n\n\t\t2\n\n\t\t\t1\n'
+    pass
 
 
 def _is_bst(node):
@@ -157,20 +139,13 @@ def _is_bst(node):
 
     '''
 
-    if node is None:
-        return True
-    if _is_bst(node.left) and _is_bst(node.right):
-        return ((node.left is None or node > node.left) and
-                (node.right is None or node < node.right))
-    return False
+    pass
 
 
 def _size(node):
     '''Return the number of nodes in the BTree rooted at node.'''
 
-    if node is None:
-        return 0
-    return 1 + _size(node.left) + _size(node.right)
+    pass
 
 
 def _fringe(node):
@@ -179,11 +154,7 @@ def _fringe(node):
 
     '''
 
-    if node is None:
-        return []
-    if (node.left is None) and (node.right is None):
-        return [node.value]
-    return _fringe(node.left) + _fringe(node.right)
+    pass
 
 
 def _height(node):
@@ -192,9 +163,7 @@ def _height(node):
 
     '''
 
-    if node is None:
-        return 0
-    return 1 + max(_height(node.left), _height(node.right))
+    pass
 
 
 if __name__ == '__main__':
@@ -208,7 +177,7 @@ if __name__ == '__main__':
                               BTNode(2, BTNode(3), None),
                               BTNode(4)),
                        BTNode(6, None, BTNode(7))))
-    # the string should be '\n\t\t7\n\n\t6\n\n5\n\n\t\t4\n\n\t3\n\n\t\t2\n\n\t\t\t1\n'
+    # the string shuld be '\n\t\t7\n\n\t6\n\n5\n\n\t\t4\n\n\t3\n\n\t\t2\n\n\t\t\t1\n'
     print(BT)
     print(BT.preorder())
     print(BT.inorder())
@@ -218,16 +187,3 @@ if __name__ == '__main__':
     print(BT.size())
     print(BT.fringe())
     print(BT.height())
-    print(BT2)
-
-    """
-    BT3 = BTree(BTNode(2, BTNode(3), None))
-    print(BT3)
-    print(BT3.is_bst())
-
-    BT4 = BTree(BTNode(3,
-                              BTNode(2, BTNode(3), None),
-                              BTNode(4)))
-    print(BT4)
-    print(BT4.is_bst())
-    """
